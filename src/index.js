@@ -1,13 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { AuthorizerProvider } from "@authorizerdev/authorizer-react";
+import { BrowserRouter } from "react-router-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthorizerProvider
+      config={{
+        authorizerURL: process.env.REACT_APP_AUTH_URL,
+        redirectURL: "http://localhost:3000/wall",
+        clientID: process.env.REACT_APP_AUTH_CLIENT_ID,
+      }}
+    >
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthorizerProvider>
   </React.StrictMode>
 );
 
