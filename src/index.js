@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthorizerProvider } from "@authorizerdev/authorizer-react";
@@ -12,7 +11,7 @@ root.render(
     <AuthorizerProvider
       config={{
         authorizerURL: process.env.REACT_APP_AUTH_URL,
-        redirectURL: "http://localhost:3000/wall",
+        redirectURL: window.location.origin,
         clientID: process.env.REACT_APP_AUTH_CLIENT_ID,
       }}
     >
