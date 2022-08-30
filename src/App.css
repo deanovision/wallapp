@@ -1,7 +1,11 @@
+/* .nav-bar {
+  width: 100%;
+} */
 .nav-links {
   display: flex;
   justify-content: space-around;
   background-color: #131112;
+  /* width: 100%; */
   align-items: center;
   height: 60px;
   margin: 0;
@@ -20,4 +24,10 @@
 }
 body {
   background-color: #f7f7ff;
+  margin: 0;
+}
+.container {
+  /* width: 960px; */
+  margin: 0 auto;
+  padding: 40px;
 }
