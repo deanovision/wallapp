@@ -1,5 +1,6 @@
 import { Authorizer } from "@authorizerdev/authorizer-react";
 import { useNavigate } from "react-router";
+import axios from "axios";
 import "./Login.css";
 const Login = () => {
   const navigate = useNavigate();
@@ -11,9 +12,29 @@ const Login = () => {
       </section>
       <section>
         <Authorizer
-          onLogin={(response) => {
-            console.log(response);
+          onLogin={() => {
+            //on successful login goto wall page
             navigate("../wall");
+          }}
+          onSignup={(response) => {
+            //on successful signup send token and email to
+            //backend to send welcome email to new user
+            const { access_token, user } = response;
+            axios({
+              method: "post",
+              url: `${process.env.REACT_APP_API_URL}/welcome`,
+              headers: {
+                Authorization: access_token,
+              },
+              data: {
+                email: user.email,
+              },
+            })
+              .then(() => {
+                //if token verified and welcome email sent navigate to wall page
+                navigate("../wall");
+              })
+              .catch((err) => console.log(err));
           }}
         />
       </section>
