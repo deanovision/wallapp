@@ -1,4 +1,5 @@
 # Getting Started
+Install Dependencies `npm install`
 
 Run `npm start` to start development server
 
