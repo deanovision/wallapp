@@ -15,4 +15,5 @@ REACT_APP_AUTH_URL //url of Authorizer app
 REACT_APP_AUTH_CLIENT_ID //get from Authorizer dashboard
 REACT_APP_API_URL //http://localhost:8080
 REACT_APP_SITE_URL //http://localhost:3000
+GENERATE_SOURCEMAP=false //to ignore source map errors caused by latest CRA
 ```
