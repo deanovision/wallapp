@@ -1,4 +1,4 @@
-import { Container, Group, Anchor } from "@mantine/core";
+import { Group, Anchor } from "@mantine/core";
 
 const Footer = () => {
   return (
