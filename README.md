@@ -1,5 +1,5 @@
 # Getting Started
-Live site deployed [here](wallapp-production.up.railway.app)
+Live site deployed [here](https://wallapp-production.up.railway.app/)
 
 Install Dependencies `npm install`
 
