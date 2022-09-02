@@ -1,4 +1,6 @@
 # Getting Started
+Live site deployed [here](wallapp-production.up.railway.app)
+
 Install Dependencies `npm install`
 
 Run `npm start` to start development server
