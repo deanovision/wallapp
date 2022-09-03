@@ -15,7 +15,7 @@ const Wall = () => {
       .then((res) => {
         setPosts(res.data);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.message));
   }, []);
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -44,7 +44,7 @@ const Wall = () => {
         navigate("../update-profile");
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   };
   return (
