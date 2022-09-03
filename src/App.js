@@ -1,4 +1,3 @@
-import { lazy, Suspense } from "react";
 import { useAuthorizer } from "@authorizerdev/authorizer-react";
 import { Routes, Route } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
@@ -11,7 +10,6 @@ import Footer from "./components/Footer";
 import ErrorFallback from "./components/ErrorFallback";
 import Wall from "./pages/Wall/Wall";
 import "./App.css";
-// const Wall = lazy(() => import("./pages/Wall/Wall"));
 
 function App() {
   const { loading } = useAuthorizer();
