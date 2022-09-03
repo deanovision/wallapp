@@ -1,14 +1,17 @@
 import { lazy, Suspense } from "react";
 import { useAuthorizer } from "@authorizerdev/authorizer-react";
 import { Routes, Route } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
 import Nav from "./components/Nav";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
 import UpdateProfile from "./pages/UpdateProfile/UpdateProfile";
 import Loading from "./components/Loading";
 import Footer from "./components/Footer";
+import ErrorFallback from "./components/ErrorFallback";
+import Wall from "./pages/Wall/Wall";
 import "./App.css";
-const Wall = lazy(() => import("./pages/Wall/Wall"));
+// const Wall = lazy(() => import("./pages/Wall/Wall"));
 
 function App() {
   const { loading } = useAuthorizer();
@@ -29,9 +32,16 @@ function App() {
           <Route
             element={
               <>
-                <Suspense fallback={<Loading />}>
+                {/* <Suspense fallback={<Loading />}> */}
+                <ErrorBoundary
+                  FallbackComponent={ErrorFallback}
+                  onReset={() => {
+                    console.log("error reset");
+                  }}
+                >
                   <Wall />
-                </Suspense>
+                </ErrorBoundary>
+                {/* </Suspense> */}
               </>
             }
             path="/wall"
